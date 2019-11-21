@@ -20,12 +20,6 @@ public class FingerprintAuthPackage implements ReactPackage {
         return modules;
     }
 
-    // @Override
-    // deprecated in 47
-    public List<Class<? extends JavaScriptModule>> createJSModules() {
-        return Collections.emptyList();
-    }
-
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return Collections.emptyList();
