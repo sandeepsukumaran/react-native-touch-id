@@ -52,11 +52,19 @@ public class FingerprintAuthModule extends ReactContextBaseJavaModule implements
 
     @ReactMethod
     public void isSupported(final Callback reactErrorCallback, final Callback reactSuccessCallback) {
+        System.out.println("HElloooooooooo------------");
+        System.out.println("HElloooooooooo------------x2");
         final Activity activity = getCurrentActivity();
+        System.out.println("HElloooooooooo------------x3");
+        System.out.println("HElloooooooooo------------x4");
         if (activity == null) {
+            System.out.println("Null activity");
             return;
+        } else {
+            System.out.println("Oh look not Null activity");
         }
 
+        System.out.println("Non-null activity");
         int result = isFingerprintAuthAvailable();
         if (result == FingerprintAuthConstants.IS_SUPPORTED) {
             // TODO: once this package supports Android's Face Unlock,
@@ -114,6 +122,7 @@ public class FingerprintAuthModule extends ReactContextBaseJavaModule implements
     }
 
     private int isFingerprintAuthAvailable() {
+        System.out.println("Yo! In isFingerprintAuthAvailable");
         if (android.os.Build.VERSION.SDK_INT < 23) {
             return FingerprintAuthConstants.NOT_SUPPORTED;
         }
