@@ -15,9 +15,6 @@ buildscript {
 
   dependencies {
     classpath rootProject.ext.has('gradleBuildTools') ? rootProject.ext.gradleBuildTools : 'com.android.tools.build:gradle:3.4.0'
-
-    def biometric_version = "1.0.0"
-    implementation "androidx.biometric:biometric:$biometric_version"
   }
 }
 
