@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.KeyguardManager;
 import android.content.Context;
 import android.hardware.fingerprint.FingerprintManager;
+import android.hardware.biometrics.BiometricManager;
 import android.os.Build;
 
 import com.facebook.react.bridge.Callback;
@@ -65,6 +66,18 @@ public class FingerprintAuthModule extends ReactContextBaseJavaModule implements
         }
 
         System.out.println("Non-null activity");
+
+        // Let's use the biometricManager and see
+        try{
+            BiometricManager biometricManager = new BiometricManager();
+            System.out.println("Created biometricManager instance");
+            int status = biometricManager.canAuthenticate();
+            System.out.println("Status" + status);
+        } catch(Exception e){
+            System.out.println("Some exception");
+            System.out.println(e);
+        }
+
         int result = isFingerprintAuthAvailable();
         if (result == FingerprintAuthConstants.IS_SUPPORTED) {
             // TODO: once this package supports Android's Face Unlock,
