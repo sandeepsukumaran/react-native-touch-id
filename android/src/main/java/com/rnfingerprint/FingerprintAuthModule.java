@@ -5,7 +5,7 @@ import android.app.Activity;
 import android.app.KeyguardManager;
 import android.content.Context;
 import android.hardware.fingerprint.FingerprintManager;
-import android.hardware.biometrics.BiometricManager;
+import androidx.biometric.BiometricManager;
 import android.os.Build;
 
 import com.facebook.react.bridge.Callback;
